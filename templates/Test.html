@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/test.css">
+    <!-- static/css/test.css -->
+    <title>Titanic - Machine Learning from Disaster</title>
+</head>
+
+<body>
+    <div class="wrap-outer">
+        <div class="container">
+            <div class="box">
+                <span></span>
+                <div class="content">
+                    <!-- Abdullah code Start here -->
+                    <h1>Titanic Survival Prediction</h1>
+                    <br>
+                    <form class="formStyle myAnimate" action="/" method="POST">
+                        <input class="inputStyle" type="number" name="SibSp" id="SibSp" min="0" placeholder="No. of Siblings/Spouse">
+                        <input class="inputStyle" type="number" id="Parch" name="Parch" min="0" placeholder="No. of Parent/Children">
+                        <input class="inputStyle" type="number" id="Age" name="Age" min="0" placeholder="Age">
+                        <input class="inputStyle" type="number" id="Fare" name="Fare" step="0.01" min="0"
+                            placeholder="Fare">
+                        <div>
+                            <label for="Embarked">Embarked Station:</label>
+                            <select class="selectionStyle" name="Embarked" id="Embarked" name="Embarked">
+                                <!-- C = Cherbourg, Q = Queenstown, S = Southampton -->
+                                <option value="S">Southampton</option>
+                                <option value="C">Cherbourg</option>
+                                <option value="Q">Queenstown</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="pClass">Passenger Class:</label>
+                            <select class="selectionStyle" name="pClass" id="pClass" name="pClass">
+                                <option value="1">First Class</option>
+                                <option value="2">Second Class</option>
+                                <option value="3">Third Class</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="Male">Male</label>
+                            <input type="radio" id="Male" name="Gender" value="0">
+                            <label for="Female">Female</label>
+                            <input type="radio" id="Female" name="Gender" value="1">
+                        </div>
+                        <input class="btnStyle" type="submit" value="Submit">
+                    </form>
+
+                    {% if prediction == True %}
+                    <div>
+                        <h3>Prediction: </h3>
+                        {% if result == True %}
+                        <p class="result">Passenger Survived</p>
+                        {% else %}
+                        <p class="result">Passenger Died</p>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+
+                    <!-- Abdullah code Ends here -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/test.js"></script>
+
+</html>
